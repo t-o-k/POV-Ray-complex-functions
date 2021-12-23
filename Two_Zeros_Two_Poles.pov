@@ -61,13 +61,13 @@ Fn =
             Sqr(
                 Z()
             ),
-            Const(5.0)
+            Const(1.0)
         ),
         Sub(
             Sqr(
                 Z()
             ),
-            Const(5.0)
+            Const(1.0)
         )
     )
 */
