@@ -31,7 +31,7 @@ List of available operators in Complex_Functions.inc:
 
   Inv(Z) = 1/Z
 
-  Cos(Z) = (e^(-z*j) + e^(+z*j))/2
+  Cos(Z) = (e^(-Z*j) + e^(+Z*j))/2
 
   Acos(Z) = -ln(Z + sqrt(1 - Z^2)*j)*j
 
