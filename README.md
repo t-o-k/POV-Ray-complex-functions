@@ -3,7 +3,7 @@ POV-Ray include file for working with complex functions
 
 j = sqrt(-1)
 
-Z = re + im*j
+Z = re + im\*j
 
 List of available operators in Complex_Functions.inc:
 
@@ -15,13 +15,13 @@ List of available operators in Complex_Functions.inc:
 
   Neg(Z) = -Z
 
-  Conj(Z) = re - im*j
+  Conj(Z) = re - im\*j
 
-  Abs(Z) = |Z| = sqrt(Z*conj(Z))
+  Abs(Z) = |Z| = sqrt(Z\*conj(Z))
 
   Phase(Z) = atan2(im, re)
 
-  Ln(Z) = ln(abs(Z)) + phase(Z)*j
+  Ln(Z) = ln(abs(Z)) + phase(Z)\*j
 
   Exp(Z) = e^Z
 
@@ -31,21 +31,21 @@ List of available operators in Complex_Functions.inc:
 
   Inv(Z) = 1/Z
 
-  Cos(Z) = (e^(-Z*j) + e^(+Z*j))/2
+  Cos(Z) = (e^(-Z\*j) + e^(+Z\*j))/2
 
-  Acos(Z) = -ln(Z + sqrt(1 - Z^2)*j)*j
+  Acos(Z) = -ln(Z + sqrt(1 - Z^2)\*j)\*j
 
-  Sin(Z) = (e^(-Z*j) - e^(+Z*j))/2*j
+  Sin(Z) = (e^(-Z\*j) - e^(+Z\*j))/2\*j
 
-  Asin(Z) = -ln(sqrt(1 - Z^2) + Z*j)*j
+  Asin(Z) = -ln(sqrt(1 - Z^2) + Z\*j)\*j
 
   Tan(Z) = sin(Z)/cos(Z)
 
-  Atan(z) = (ln(1 - Z*j) - ln(1 + Z*j))/2*j
+  Atan(z) = (ln(1 - Z\*j) - ln(1 + Z\*j))/2\*j
 
   Cosh(Z) = (e^(+Z) + e^(-Z)))/2
 
-  Acosh(Z) = +ln(Z + sqrt(Z + 1)*sqrt(Z - 1))
+  Acosh(Z) = +ln(Z + sqrt(Z + 1)\*sqrt(Z - 1))
 
   Sinh(Z) = (e^(+Z) - e^(-Z)))/2
 
@@ -59,7 +59,7 @@ List of available operators in Complex_Functions.inc:
 
   Sub(Z1, Z2) = Z1 - Z2
 
-  Mul(Z1, Z2) = Z1*Z2
+  Mul(Z1, Z2) = Z1\*Z2
 
   Div(Z1, Z2) = Z1/Z2
 
