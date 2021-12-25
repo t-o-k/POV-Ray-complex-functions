@@ -453,7 +453,7 @@ which can be found in the LICENSE file.
             // pow(+pow(re, 2) +pow(im, 2), 0.25)*sin(atan2(im, re)/2)
         },
 
-        // Inverse
+        // Inv
         function(re, im) { -im/(+pow(re, 2) +pow(im, 2)) },
 
         // Cos
