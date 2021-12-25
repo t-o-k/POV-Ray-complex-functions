@@ -1,62 +1,66 @@
 # POV-Ray-complex-functions
 POV-Ray include file for working with complex functions
 
+j = sqrt(-1)
+
+Z = re + im*j
+
 List of available operators in Complex_Functions.inc:
 
-  Re(Z)
+  Re(Z) = re
 
-  Im(Z)
+  Im(Z) = im
 
-  Pos(Z)
+  Pos(Z) = +Z
 
-  Neg(Z)
+  Neg(Z) = -Z
 
-  Conj(Z)
+  Conj(Z) = re - im*j
 
-  Abs(Z)
+  Abs(Z) = |Z| = sqrt(Z*conj(Z))
 
-  Phase(Z)
+  Phase(Z) = atan2(im, re)
 
-  Ln(Z)
+  Ln(Z) = ln(abs(Z)) + phase(Z)*j
 
-  Exp(Z)
+  Exp(Z) = e^Z
 
-  Sqr(Z)
+  Sqr(Z) = Z^2
 
-  Sqrt(Z)
+  Sqrt(Z) = Z^0.5
 
-  Inv(Z)
+  Inv(Z) = 1/Z
 
-  Cos(Z)
+  Cos(Z) = (e^(-z*j) + e^(+z*j))/2
 
-  Acos(Z)
+  Acos(Z) = -ln(Z + sqrt(1 - Z^2)*j)*j
 
-  Sin(Z)
+  Sin(Z) = (e^(-Z*j) - e^(+Z*j))/2*j
 
-  Asin(Z)
+  Asin(Z) = -ln(sqrt(1 - Z^2) + Z*j)*j
 
-  Tan(Z)
+  Tan(Z) = sin(Z)/cos(Z)
 
-  Atan(Z)
+  Atan(z) = (ln(1 - Z*j) - ln(1 + Z*j))/2*j
 
-  Cosh(Z)
+  Cosh(Z) = (e^(+Z) + e^(-Z)))/2
 
-  Acosh(Z)
+  Acosh(Z) = +ln(Z + sqrt(Z + 1)*sqrt(Z - 1))
 
-  Sinh(Z)
+  Sinh(Z) = (e^(+Z) - e^(-Z)))/2
 
-  Asinh(Z)
+  Asinh(Z) = +ln(Z + sqrt(Z^2 + 1))
 
-  Tanh(Z)
+  Tanh(Z) = sinh(Z)/cosh(Z)
 
-  Atanh(Z)
+  Atanh(Z) = (ln(1 + Z) - ln(1 - Z))/2
 
-  Add(Z1, Z2)
+  Add(Z1, Z2) = Z1 + Z2
 
-  Sub(Z1, Z2)
+  Sub(Z1, Z2) = Z1 - Z2
 
-  Mul(Z1, Z2)
+  Mul(Z1, Z2) = Z1*Z2
 
-  Div(Z1, Z2)
+  Div(Z1, Z2) = Z1/Z2
 
-  Pow(Z1, Z2)
+  Pow(Z1, Z2) = Z1^Z2
