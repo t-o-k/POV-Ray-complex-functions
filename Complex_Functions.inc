@@ -1,14 +1,14 @@
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
-
 /*
+
 https://github.com/t-o-k/POV-Ray-complex-functions
 
 Copyright (c) 2021 Tor Olav Kristensen, http://subcube.com
 
 Use of this source code is governed by the GNU Lesser General Public License version 3,
 which can be found in the LICENSE file.
-*/
 
+*/
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
 #version 3.7;
@@ -128,7 +128,7 @@ which can be found in the LICENSE file.
         // Tan(Z) = sin(Z)/cos(Z)
         "Tan",
 
-        // Atan(Z) = +ln((j + Z)/(j - Z))/2*j
+        // Atan(Z) = (ln(1 - Z\*j) - ln(1 + Z\*j))/2\*j
         "Atan",
 
         // Cosh(Z) = +(e^(+Z) + e^(-Z))/2
@@ -146,7 +146,7 @@ which can be found in the LICENSE file.
         // Tanh(Z) = sinh(Z)/cosh(Z)
         "Tanh",
 
-        // Atanh(Z) = +(ln(1 + Z) - ln(1 - Z))/2
+        // Atanh(Z) = (ln(1 + Z) - ln(1 - Z))/2
         "Atanh",
 
         // Add(Z1, Z2) = Z1 + Z2
