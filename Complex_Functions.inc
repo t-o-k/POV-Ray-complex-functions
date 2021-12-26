@@ -15,7 +15,7 @@ which can be found in the LICENSE file.
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
-#declare Tau = 2*pi;
+#declare TAU = 2*pi;
 
 
 #macro IndexOfString(Str, Strings)
@@ -72,10 +72,10 @@ which can be found in the LICENSE file.
 // j = sqrt(-1)
 // Z = re + im*j
 
-#declare NoOfOperators = 29;
+#declare NO_OF_OPERATORS = 29;
 
-#declare OperatorTypes =
-    array[NoOfOperators] {
+#declare OPERATOR_TYPES =
+    array[NO_OF_OPERATORS] {
 
         // Re(Z) = re
         "Re",
@@ -165,8 +165,8 @@ which can be found in the LICENSE file.
         "Pow"
     }
 ;
-#declare NoOfArguments =
-    array[NoOfOperators] {
+#declare NO_OF_ARGUMENTS =
+    array[NO_OF_OPERATORS] {
 
         // Re
         1,
@@ -256,8 +256,8 @@ which can be found in the LICENSE file.
         2
     }
 ;
-#declare ReOperatorFunctions =
-    array[NoOfOperators] {
+#declare RE_OPERATOR_FUNCTIONS =
+    array[NO_OF_OPERATORS] {
 
         // Re
         function(re, im) { +re },
@@ -414,8 +414,8 @@ which can be found in the LICENSE file.
         }
     }
 ;
-#declare ImOperatorFunctions =
-    array[NoOfOperators] {
+#declare IM_OPERATOR_FUNCTIONS =
+    array[NO_OF_OPERATORS] {
 
         // Re
         function(re, im) { 0 },
@@ -572,11 +572,11 @@ which can be found in the LICENSE file.
         }
     }
 ;
-#undef NoOfOperators
+#undef NO_OF_OPERATORS
 
-#declare PowIdx = IndexOfString("Pow", OperatorTypes);
-#undef ReOperatorFunctions[PowIdx]
-#declare ReOperatorFunctions[PowIdx] =
+#declare POW_IDX = IndexOfString("Pow", OPERATOR_TYPES);
+#undef RE_OPERATOR_FUNCTIONS[POW_IDX]
+#declare RE_OPERATOR_FUNCTIONS[POW_IDX] =
     HandleZerosFunction(
         function(re1, im1, re2, im2) {
                 exp(+re2/2*ln(+pow(re1, 2) +pow(im1, 2)) -im2*atan2(im1, re1))
@@ -585,8 +585,8 @@ which can be found in the LICENSE file.
         }
     )
 ;
-#undef ImOperatorFunctions[PowIdx]
-#declare ImOperatorFunctions[PowIdx] =
+#undef IM_OPERATOR_FUNCTIONS[POW_IDX]
+#declare IM_OPERATOR_FUNCTIONS[POW_IDX] =
     HandleZerosFunction(
         function(re1, im1, re2, im2) {
                 exp(+re2/2*ln(+pow(re1, 2) +pow(im1, 2)) -im2*atan2(im1, re1))
@@ -595,7 +595,7 @@ which can be found in the LICENSE file.
         }
     )
 ;
-#undef PowIdx
+#undef POW_IDX
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
@@ -814,7 +814,7 @@ which can be found in the LICENSE file.
 
     #local Idx = IndexOfString(OpName, OpTypes);
 
-    function(re, im) { ReOperatorFunctions[Idx](re, im) }
+    function(re, im) { RE_OPERATOR_FUNCTIONS[Idx](re, im) }
 
 #end // macro GetReOpFunction
 
@@ -823,7 +823,7 @@ which can be found in the LICENSE file.
 
     #local Idx = IndexOfString(OpName, OpTypes);
 
-    function(re, im) { ImOperatorFunctions[Idx](re, im) }
+    function(re, im) { IM_OPERATOR_FUNCTIONS[Idx](re, im) }
 
 #end // macro GetImOpFunction
 
