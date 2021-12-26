@@ -72,7 +72,7 @@ which can be found in the LICENSE file.
 // j = sqrt(-1)
 // Z = re + im*j
 
-#declare NO_OF_OPERATORS = 29;
+#declare NO_OF_OPERATORS = 30;
 
 #declare OPERATOR_TYPES =
     array[NO_OF_OPERATORS] {
@@ -82,6 +82,9 @@ which can be found in the LICENSE file.
 
         // Im(Z) = im
         "Im",
+
+        // Copy(Z) = Z
+        "Copy",
 
         // Pos(Z) = +Z
         "Pos",
@@ -174,6 +177,9 @@ which can be found in the LICENSE file.
         // Im
         1,
 
+        // Copy
+        1,
+
         // Pos
         1,
 
@@ -260,10 +266,13 @@ which can be found in the LICENSE file.
     array[NO_OF_OPERATORS] {
 
         // Re
-        function(re, im) { +re },
+        function(re, im) { re },
 
         // Im
         function(re, im) { 0 },
+
+        // Copy
+        function(re, im) { re },
 
         // Pos
         function(re, im) { +re },
@@ -421,7 +430,10 @@ which can be found in the LICENSE file.
         function(re, im) { 0 },
 
         // Im
-        function(re, im) { +im },
+        function(re, im) { im },
+
+        // Copy
+        function(re, im) { im },
 
         // Pos
         function(re, im) { +im },
