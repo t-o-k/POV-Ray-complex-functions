@@ -11,6 +11,8 @@ List of available operators in Complex_Functions.inc:
 
   Im(Z) = im
 
+  Copy(Z) = Z
+
   Pos(Z) = +Z
 
   Neg(Z) = -Z
