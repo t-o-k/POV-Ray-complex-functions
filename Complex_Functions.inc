@@ -591,9 +591,9 @@ which can be found in the LICENSE file.
 #declare RE_OPERATOR_FUNCTIONS[POW_IDX] =
     HandleZerosFunction(
         function(re1, im1, re2, im2) {
-                exp(+re2/2*ln(+pow(re1, 2) +pow(im1, 2)) -im2*atan2(im1, re1))
+            exp(+re2/2*ln(+pow(re1, 2) +pow(im1, 2)) -im2*atan2(im1, re1))
             *
-                cos(+im2/2*ln(+pow(re1, 2) +pow(im1, 2)) +re2*atan2(im1, re1))
+            cos(+im2/2*ln(+pow(re1, 2) +pow(im1, 2)) +re2*atan2(im1, re1))
         }
     )
 ;
@@ -601,9 +601,9 @@ which can be found in the LICENSE file.
 #declare IM_OPERATOR_FUNCTIONS[POW_IDX] =
     HandleZerosFunction(
         function(re1, im1, re2, im2) {
-                exp(+re2/2*ln(+pow(re1, 2) +pow(im1, 2)) -im2*atan2(im1, re1))
+            exp(+re2/2*ln(+pow(re1, 2) +pow(im1, 2)) -im2*atan2(im1, re1))
             *
-                sin(+im2/2*ln(+pow(re1, 2) +pow(im1, 2)) +re2*atan2(im1, re1))
+            sin(+im2/2*ln(+pow(re1, 2) +pow(im1, 2)) +re2*atan2(im1, re1))
         }
     )
 ;
@@ -670,21 +670,10 @@ which can be found in the LICENSE file.
     #end // if
     #switch (NO_OF_ARGUMENTS[Idx])
         #case (1)
-            Args1Function(
-                OpFns[Idx],
-                ReFns,
-                ImFns,
-                ArgNoFn(1)
-            )
+            Args1Function(OpFns[Idx], ReFns, ImFns, ArgNoFn(1))
             #break
         #case (2)
-            Args2Function(
-                OpFns[Idx],
-                ReFns,
-                ImFns,
-                ArgNoFn(1),
-                ArgNoFn(2)
-            )
+            Args2Function(OpFns[Idx], ReFns, ImFns, ArgNoFn(1), ArgNoFn(2))
             #break
     #else
         #error "Uknown problem"
@@ -702,13 +691,7 @@ which can be found in the LICENSE file.
             #local ReVal = ArgNoFn(-1);
             ReConstFunction(ReVal)
         #else
-            GetOpFunction(
-                RE_OPERATOR_FUNCTIONS,
-                ReFns,
-                ImFns,
-                ExprType,
-                ArgNoFn
-            )
+            GetOpFunction(RE_OPERATOR_FUNCTIONS, ReFns, ImFns, ExprType, ArgNoFn)
         #end // if
     #end // if
 
@@ -724,13 +707,7 @@ which can be found in the LICENSE file.
             #local ImVal = ArgNoFn(-2);
             ImConstFunction(ImVal)
         #else
-            GetOpFunction(
-                IM_OPERATOR_FUNCTIONS,
-                ReFns,
-                ImFns,
-                ExprType,
-                ArgNoFn
-            )
+            GetOpFunction(IM_OPERATOR_FUNCTIONS, ReFns, ImFns, ExprType, ArgNoFn)
         #end // if
     #end // if
 
@@ -742,20 +719,8 @@ which can be found in the LICENSE file.
     #local No = dimension_size(ExprTypes, 1);
     #for (I, 0, No-1)
         #declare ExprType = ExprTypes[I];
-        #declare ReFns[I] =
-            ReChooseFunction(
-                ReFns,
-                ImFns,
-                ExprType,
-                ArgNoFns[I]
-             )
-        #declare ImFns[I] =
-            ImChooseFunction(
-                ReFns,
-                ImFns,
-                ExprType,
-                ArgNoFns[I]
-            )
+        #declare ReFns[I] = ReChooseFunction(ReFns, ImFns, ExprType, ArgNoFns[I])
+        #declare ImFns[I] = ImChooseFunction(ReFns, ImFns, ExprType, ArgNoFns[I])
     #end // for
 
 #end // macro AssembleFunctions
