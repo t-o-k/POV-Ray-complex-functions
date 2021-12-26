@@ -662,13 +662,13 @@ which can be found in the LICENSE file.
 #end // macro Args2Function
 
 
-#macro GetOpFunction(OpTypes, NoOfArgs, OpFns, ReFns, ImFns, ExprType, ArgNoFn)
+#macro GetOpFunction(OpFns, ReFns, ImFns, ExprType, ArgNoFn)
  
-    #local Idx = IndexOfString(ExprType, OpTypes);
+    #local Idx = IndexOfString(ExprType, OPERATOR_TYPES);
     #if (Idx < 0)
         #error "Unknown function type"
     #end // if
-    #switch (NoOfArgs[Idx])
+    #switch (NO_OF_ARGUMENTS[Idx])
         #case (1)
             Args1Function(
                 OpFns[Idx],
@@ -693,7 +693,7 @@ which can be found in the LICENSE file.
 #end // macro GetOpFunction
 
 
-#macro ReChooseFunction(OpTypes, NoOfArgs, ReOpFns, ReFns, ImFns, ExprType, ArgNoFn)
+#macro ReChooseFunction(ReOpFns, ReFns, ImFns, ExprType, ArgNoFn)
  
     #if (strcmp(ExprType, "Z") = 0)
         ReZFunction()
@@ -703,8 +703,6 @@ which can be found in the LICENSE file.
             ReConstFunction(ReVal)
         #else
             GetOpFunction(
-                OpTypes,
-                NoOfArgs,
                 ReOpFns,
                 ReFns,
                 ImFns,
@@ -717,7 +715,7 @@ which can be found in the LICENSE file.
 #end // macro ReChooseFunction
 
 
-#macro ImChooseFunction(OpTypes, NoOfArgs, ImOpFns, ReFns, ImFns, ExprType, ArgNoFn)
+#macro ImChooseFunction(ImOpFns, ReFns, ImFns, ExprType, ArgNoFn)
 
     #if (strcmp(ExprType, "Z") = 0)
         ImZFunction()
@@ -727,8 +725,6 @@ which can be found in the LICENSE file.
             ImConstFunction(ImVal)
         #else
             GetOpFunction(
-                OpTypes,
-                NoOfArgs,
                 ImOpFns,
                 ReFns,
                 ImFns,
@@ -741,15 +737,13 @@ which can be found in the LICENSE file.
 #end // macro ImChooseFunction
 
 
-#macro AssembleFunctions(OpTypes, NoOfArgs, ReOpFns, ImOpFns, ExprTypes, ArgNoFns, ReFns, ImFns)
+#macro AssembleFunctions(ReOpFns, ImOpFns, ExprTypes, ArgNoFns, ReFns, ImFns)
 
     #local No = dimension_size(ExprTypes, 1);
     #for (I, 0, No-1)
         #declare ExprType = ExprTypes[I];
         #declare ReFns[I] =
             ReChooseFunction(
-                OpTypes,
-                NoOfArgs,
                 ReOpFns,
                 ReFns,
                 ImFns,
@@ -758,8 +752,6 @@ which can be found in the LICENSE file.
              )
         #declare ImFns[I] =
             ImChooseFunction(
-                OpTypes,
-                NoOfArgs,
                 ImOpFns,
                 ReFns,
                 ImFns,
@@ -822,18 +814,18 @@ which can be found in the LICENSE file.
 #end // macro FinalFunction
 
 
-#macro GetReOpFunction(OpName, OpTypes)
+#macro GetReOpFunction(OpName)
 
-    #local Idx = IndexOfString(OpName, OpTypes);
+    #local Idx = IndexOfString(OpName, OPERATOR_TYPES);
 
     function(re, im) { RE_OPERATOR_FUNCTIONS[Idx](re, im) }
 
 #end // macro GetReOpFunction
 
 
-#macro GetImOpFunction(OpName, OpTypes)
+#macro GetImOpFunction(OpName)
 
-    #local Idx = IndexOfString(OpName, OpTypes);
+    #local Idx = IndexOfString(OpName, OPERATOR_TYPES);
 
     function(re, im) { IM_OPERATOR_FUNCTIONS[Idx](re, im) }
 
@@ -847,16 +839,16 @@ which can be found in the LICENSE file.
 #end // macro CompoundFunction
 
 
-#macro MagnitudeFunction(OpTypes, ReFn, ImFn)
+#macro MagnitudeFunction(ReFn, ImFn)
 
-    CompoundFunction(GetReOpFunction("Abs", OpTypes), ReFn, ImFn)
+    CompoundFunction(GetReOpFunction("Abs"), ReFn, ImFn)
 
 #end // macro MagnitudeFunction
 
 
-#macro PhaseFunction(OpTypes, ReFn, ImFn)
+#macro PhaseFunction(ReFn, ImFn)
 
-    CompoundFunction(GetReOpFunction("Phase", OpTypes), ReFn, ImFn )
+    CompoundFunction(GetReOpFunction("Phase"), ReFn, ImFn )
 
 #end // macro PhaseFunction
 
