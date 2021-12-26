@@ -138,10 +138,10 @@ Fn =
 #declare ImFunctions = array[No];
 
 AssembleFunctions(
-    OperatorTypes,
-    NoOfArguments,
-    ReOperatorFunctions,
-    ImOperatorFunctions,
+    OPERATOR_TYPES,
+    NO_OF_ARGUMENTS,
+    RE_OPERATOR_FUNCTIONS,
+    IM_OPERATOR_FUNCTIONS,
     PartTypes,
     Arguments,
     ReFunctions,
@@ -153,14 +153,14 @@ AssembleFunctions(
 
 #declare MagnitudeFn =
     MagnitudeFunction(
-        OperatorTypes,
+        OPERATOR_TYPES,
         FinalFunction(ReFunctions),
         FinalFunction(ImFunctions)
     )
 ;
 #declare PhaseFn =
     PhaseFunction(
-        OperatorTypes,
+        OPERATOR_TYPES,
         FinalFunction(ReFunctions),
         FinalFunction(ImFunctions)
     )
@@ -179,7 +179,7 @@ AssembleFunctions(
         [ 6/6 color rgb <1, 0, 0> ]
     }
 
-#declare ColorSelectFn = function(re, im) { mod(Tau + PhaseFn(re, im), Tau)/Tau };
+#declare ColorSelectFn = function(re, im) { mod(TAU + PhaseFn(re, im), TAU)/TAU };
 
 #declare pMin = <-3, -4, -3>;
 #declare pMax = < 3,  4,  3>;
