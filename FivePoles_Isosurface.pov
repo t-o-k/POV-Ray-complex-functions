@@ -70,27 +70,16 @@ Fn =
 #declare ReFunctions = array[No];
 #declare ImFunctions = array[No];
 
-AssembleFunctions(
-    OPERATOR_TYPES,
-    NO_OF_ARGUMENTS,
-    RE_OPERATOR_FUNCTIONS,
-    IM_OPERATOR_FUNCTIONS,
-    PartTypes,
-    Arguments,
-    ReFunctions,
-    ImFunctions
-)
+AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 
 #declare MagnitudeFn =
     MagnitudeFunction(
-        OPERATOR_TYPES,
         FinalFunction(ReFunctions),
         FinalFunction(ImFunctions)
     )
 ;
 #declare PhaseFn =
     PhaseFunction(
-        OPERATOR_TYPES,
         FinalFunction(ReFunctions),
         FinalFunction(ImFunctions)
     )
