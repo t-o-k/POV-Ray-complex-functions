@@ -50,7 +50,7 @@ which can be found in the LICENSE file.
 
 // https://en.wikipedia.org/wiki/HSL_and_HSV
 
-#declare HSL_Rd1_Fn =
+#declare HSL_RD1_FN =
     function(hm_, c_, x_) {
         0
         + select(hm_ - 0, c_, select(hm_ - 1, c_,  0))
@@ -61,7 +61,7 @@ which can be found in the LICENSE file.
         + select(hm_ - 5,  0, select(hm_ - 6, c_, c_))
     }
 ;
-#declare HSL_Gn1_Fn =
+#declare HSL_GN1_FN =
     function(hm_, c_, x_) {
         0
         + select(hm_ - 0,  0, select(hm_ - 1, x_,  0))
@@ -72,7 +72,7 @@ which can be found in the LICENSE file.
         + select(hm_ - 5,  0, select(hm_ - 6,  0, x_))
     }
 ;
-#declare HSL_Bu1_Fn =
+#declare HSL_BU1_FN =
     function(hm_, c_, x_) {
         0
         + select(hm_ - 0, x_, select(hm_ - 1,  0,  0))
@@ -84,9 +84,9 @@ which can be found in the LICENSE file.
     }
 ;
 
-#declare HSL_Rd2_Fn =
+#declare HSL_RD2_FN =
     function(l_, c_, hm_) {
-        HSL_Rd1_Fn(
+        HSL_RD1_FN(
             hm_,
             c_,
             c_*(1 - abs(mod(hm_, 2) - 1)) // X
@@ -94,9 +94,9 @@ which can be found in the LICENSE file.
         + l_ - c_/2 // m
     }
 ;
-#declare HSL_Gn2_Fn =
+#declare HSL_GN2_FN =
     function(l_, c_, hm_) {
-        HSL_Gn1_Fn(
+        HSL_GN1_FN(
             hm_,
             c_,
             c_*(1 - abs(mod(hm_, 2) - 1)) // X
@@ -104,9 +104,9 @@ which can be found in the LICENSE file.
          + l_ - c_/2 // m
     }
 ;
-#declare HSL_Bu2_Fn =
+#declare HSL_BU2_FN =
     function(l_, c_, hm_) {
-        HSL_Bu1_Fn(
+        HSL_BU1_FN(
             hm_,
             c_,
             c_*(1 - abs(mod(hm_, 2) - 1)) // X
@@ -115,27 +115,27 @@ which can be found in the LICENSE file.
     }
 ;
 
-#declare HSL_Rd_Fn =
+#declare HSL_RD_FN =
     function(h_, sl_, l_) {
-        HSL_Rd2_Fn(
+        HSL_RD2_FN(
             l_,
             (1 - abs(2*l_ - 1))*sl_, // C
             h_/60 // Hm
         )
     }
 ;
-#declare HSL_Gn_Fn =
+#declare HSL_GN_FN =
     function(h_, sl_, l_) {
-        HSL_Gn2_Fn(
+        HSL_GN2_FN(
             l_,
             (1 - abs(2*l_ - 1))*sl_, // C
             h_/60 // Hm
         )
     }
 ;
-#declare HSL_Bu_Fn =
+#declare HSL_BU_FN =
     function(h_, sl_, l_) {
-        HSL_Bu2_Fn(
+        HSL_BU2_FN(
             l_,
             (1 - abs(2*l_ - 1))*sl_, // C
             h_/60 // Hm
