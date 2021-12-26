@@ -71,10 +71,10 @@ Fn =
 #declare ImFunctions = array[No];
 
 AssembleFunctions(
-    OperatorTypes,
-    NoOfArguments,
-    ReOperatorFunctions,
-    ImOperatorFunctions,
+    OPERATOR_TYPES,
+    NO_OF_ARGUMENTS,
+    RE_OPERATOR_FUNCTIONS,
+    IM_OPERATOR_FUNCTIONS,
     PartTypes,
     Arguments,
     ReFunctions,
@@ -83,14 +83,14 @@ AssembleFunctions(
 
 #declare MagnitudeFn =
     MagnitudeFunction(
-        OperatorTypes,
+        OPERATOR_TYPES,
         FinalFunction(ReFunctions),
         FinalFunction(ImFunctions)
     )
 ;
 #declare PhaseFn =
     PhaseFunction(
-        OperatorTypes,
+        OPERATOR_TYPES,
         FinalFunction(ReFunctions),
         FinalFunction(ImFunctions)
     )
@@ -98,7 +98,7 @@ AssembleFunctions(
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
-#declare H_Fn = function(re, im) { degrees(mod(Tau + PhaseFn(re, im), Tau)) };
+#declare H_Fn = function(re, im) { degrees(mod(TAU + PhaseFn(re, im), TAU)) };
 #declare S = 1.0;
 #declare L = 0.5;
 
