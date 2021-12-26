@@ -128,7 +128,7 @@ which can be found in the LICENSE file.
         // Tan(Z) = sin(Z)/cos(Z)
         "Tan",
 
-        // Atan(Z) = (ln(1 - Z\*j) - ln(1 + Z\*j))/2\*j
+        // Atan(Z) = (ln(1 - Z*j) - ln(1 + Z*j))/2*j
         "Atan",
 
         // Cosh(Z) = +(e^(+Z) + e^(-Z))/2
