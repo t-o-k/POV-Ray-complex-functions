@@ -119,7 +119,7 @@ which can be found in the LICENSE file.
         // Acos(Z) = -ln(Z + sqrt(1 - Z^2)*j)*j
         "Acos",
 
-        // Sin(Z) = (e^(-z*j) - e^(+z*j))/2*j
+        // Sin(Z) = (e^(-Z*j) - e^(+Z*j))/2*j
         "Sin",
 
         // Asin(Z) = -ln(sqrt(1 - Z^2) + Z*j)*j
