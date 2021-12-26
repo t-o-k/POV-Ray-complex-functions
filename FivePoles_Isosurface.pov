@@ -113,9 +113,9 @@ isosurface {
     accuracy 0.001
     max_gradient 20
     FunctionsPigmentRGB(
-        function { HSL_Rd_Fn(H_Fn(x, z), S, L) },
-        function { HSL_Gn_Fn(H_Fn(x, z), S, L) },
-        function { HSL_Bu_Fn(H_Fn(x, z), S, L) }
+        function { HSL_RD_FN(H_Fn(x, z), S, L) },
+        function { HSL_GN_FN(H_Fn(x, z), S, L) },
+        function { HSL_BU_FN(H_Fn(x, z), S, L) }
     )
 }
 
