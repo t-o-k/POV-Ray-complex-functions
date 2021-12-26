@@ -693,7 +693,7 @@ which can be found in the LICENSE file.
 #end // macro GetOpFunction
 
 
-#macro ReChooseFunction(ReOpFns, ReFns, ImFns, ExprType, ArgNoFn)
+#macro ReChooseFunction(ReFns, ImFns, ExprType, ArgNoFn)
  
     #if (strcmp(ExprType, "Z") = 0)
         ReZFunction()
@@ -703,7 +703,7 @@ which can be found in the LICENSE file.
             ReConstFunction(ReVal)
         #else
             GetOpFunction(
-                ReOpFns,
+                RE_OPERATOR_FUNCTIONS,
                 ReFns,
                 ImFns,
                 ExprType,
@@ -715,7 +715,7 @@ which can be found in the LICENSE file.
 #end // macro ReChooseFunction
 
 
-#macro ImChooseFunction(ImOpFns, ReFns, ImFns, ExprType, ArgNoFn)
+#macro ImChooseFunction(ReFns, ImFns, ExprType, ArgNoFn)
 
     #if (strcmp(ExprType, "Z") = 0)
         ImZFunction()
@@ -725,7 +725,7 @@ which can be found in the LICENSE file.
             ImConstFunction(ImVal)
         #else
             GetOpFunction(
-                ImOpFns,
+                IM_OPERATOR_FUNCTIONS,
                 ReFns,
                 ImFns,
                 ExprType,
@@ -737,14 +737,13 @@ which can be found in the LICENSE file.
 #end // macro ImChooseFunction
 
 
-#macro AssembleFunctions(ReOpFns, ImOpFns, ExprTypes, ArgNoFns, ReFns, ImFns)
+#macro AssembleFunctions(ExprTypes, ArgNoFns, ReFns, ImFns)
 
     #local No = dimension_size(ExprTypes, 1);
     #for (I, 0, No-1)
         #declare ExprType = ExprTypes[I];
         #declare ReFns[I] =
             ReChooseFunction(
-                ReOpFns,
                 ReFns,
                 ImFns,
                 ExprType,
@@ -752,7 +751,6 @@ which can be found in the LICENSE file.
              )
         #declare ImFns[I] =
             ImChooseFunction(
-                ImOpFns,
                 ReFns,
                 ImFns,
                 ExprType,
