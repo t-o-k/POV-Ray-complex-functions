@@ -87,7 +87,8 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
-#declare H_Fn = function(re, im) { degrees(mod(TAU + PhaseFn(re, im), TAU)) };
+#declare H_Fn = function(re, im) { mod(360 + degrees(PhaseFn(re, im)), 360) };
+
 #declare S = 1.0;
 #declare L = 0.5;
 
