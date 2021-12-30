@@ -100,7 +100,7 @@ isosurface {
         box { pMin, pMax }
     }
     accuracy 0.001
-    max_gradient 20
+    max_gradient 30
     FunctionsPigmentRGB(
         function { HSL_RD_FN(H_Fn(x, z), S, L) },
         function { HSL_GN_FN(H_Fn(x, z), S, L) },
@@ -114,7 +114,7 @@ background { color Gray70 }
 
 light_source {
     100*<-3,  3, -1>
-    color White
+    color 1.2*White
     shadowless
 }
 
