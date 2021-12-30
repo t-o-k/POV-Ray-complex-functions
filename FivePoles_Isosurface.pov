@@ -87,9 +87,43 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
+// Hue
 #declare H_Fn = function(re, im) { mod(360 + degrees(PhaseFn(re, im)), 360) };
 
+// Saturation
 #declare S = 1.0;
+
+#declare PhaseInterval = 60; // Degrees
+#declare HalfPhaseInterval = PhaseInterval/2;
+#declare IntervalFn =
+    function(p) {
+        mod(p - HalfPhaseInterval, PhaseInterval)
+        +
+        select(p - HalfPhaseInterval, +HalfPhaseInterval, -HalfPhaseInterval)
+    }
+;
+
+#declare NoLightness = 0.0;
+#declare HalfLightness = 0.5;
+#declare StripeWidth = 4.0; // Degrees
+#declare HalfStripeWidth = StripeWidth/2;
+#declare StripeFn =
+    function(p) {
+        select(
+            p + HalfStripeWidth,
+            HalfLightness,
+            select(
+                p - HalfStripeWidth,
+                NoLightness,
+                HalfLightness
+            )
+        )
+    }
+;
+
+// Lightness
+#declare L_Fn = function(re, im) { StripeFn(IntervalFn(H_Fn(re, im))) };
+
 #declare L = 0.5;
 
 #declare pMin = <-3.0, -0.2, -2.0>;
@@ -103,9 +137,9 @@ isosurface {
     accuracy 0.001
     max_gradient 30
     FunctionsPigmentRGB(
-        function { HSL_RD_FN(H_Fn(x, z), S, L) },
-        function { HSL_GN_FN(H_Fn(x, z), S, L) },
-        function { HSL_BU_FN(H_Fn(x, z), S, L) }
+        function { HSL_RD_FN(H_Fn(x, z), S, L_Fn(x, z)) },
+        function { HSL_GN_FN(H_Fn(x, z), S, L_Fn(x, z)) },
+        function { HSL_BU_FN(H_Fn(x, z), S, L_Fn(x, z)) }
     )
 }
 
