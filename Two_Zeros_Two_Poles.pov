@@ -17,38 +17,7 @@ global_settings { assumed_gamma 1.0 }
 
 #include "colors.inc"
 #include "Complex_Functions.inc"
-
-// ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
-
-#macro FunctionMesh(Fn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
-
-    #local MinX = pMin.x;
-    #local MinZ = pMin.z;
-    #local MaxX = pMax.x;
-    #local MaxZ = pMax.z;
-    #local DX = (MaxX - MinX)/NoOfIntervalsX;
-    #local DZ = (MaxZ - MinZ)/NoOfIntervalsZ;
-
-    mesh {
-        #local X0 = MinX;
-        #for (CntX, 0, NoOfIntervalsX-1)
-            #local X1 = X0 + DX;
-            #local Z0 = MinZ;
-            #for (CntZ, 0, NoOfIntervalsZ-1)
-                #local Z1 = Z0 + DZ;
-                #local Y00 = Fn(X0, Z0);
-                #local Y10 = Fn(X1, Z0);
-                #local Y11 = Fn(X1, Z1);
-                #local Y01 = Fn(X0, Z1);
-                triangle { <X0, Y00, Z0>, <X1, Y11, Z1>, <X1, Y10, Z0> }
-                triangle { <X1, Y11, Z1>, <X0, Y00, Z0>, <X0, Y01, Z1> }
-                #local Z0 = Z1;
-            #end // for
-            #local X0 = X1;
-        #end // for
-    }                        
-
-#end // macro FunctionMesh
+#include "Function_Meshes.inc"
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
@@ -177,15 +146,12 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 #declare NoOfIntervalsZ = 80;
 
 object {
-    FunctionMesh(MagnitudeFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
-    // FunctionMesh(RealFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
-    // FunctionMesh(ImagFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
+    ClippedFunctionMesh(MagnitudeFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
+    // ClippedFunctionMesh(RealFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
+    // ClippedFunctionMesh(ImagFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
     pigment {
         function { ColorSelectFn(x, z) }
         color_map { ColorWheel }
-    }
-    clipped_by {
-       box { pMin, pMax }
     }
 }
 
