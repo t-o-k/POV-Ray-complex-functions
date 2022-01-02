@@ -21,21 +21,21 @@ which can be found in the LICENSE file.
         average
         pigment_map {
             [
-                function { RdFn(x, y, z) }
+                function { min(max(0, RdFn(x, y, z)), 1) }
                 color_map {
                     [ 0 red 0 ]
                     [ 1 red 3 ]
                 }
             ]
             [
-                function { GnFn(x, y, z) }
+                function { min(max(0, GnFn(x, y, z)), 1) }
                 color_map {
                     [ 0 green 0 ]
                     [ 1 green 3 ]
                 }
             ]
             [
-                function { BuFn(x, y, z) }
+                function { min(max(0, BuFn(x, y, z)), 1) }
                 color_map {
                     [ 0 blue 0 ]
                     [ 1 blue 3 ]
