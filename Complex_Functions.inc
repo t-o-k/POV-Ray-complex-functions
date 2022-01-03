@@ -83,8 +83,8 @@ which can be found in the LICENSE file.
         // Im(Z) = im
         "Im",
 
-        // Copy(Z) = Z
-        "Copy",
+        // Id(Z) = Z
+        "Id",
 
         // Pos(Z) = +Z
         "Pos",
@@ -177,7 +177,7 @@ which can be found in the LICENSE file.
         // Im
         1,
 
-        // Copy
+        // Id
         1,
 
         // Pos
@@ -271,7 +271,7 @@ which can be found in the LICENSE file.
         // Im
         function(re, im) { 0 },
 
-        // Copy
+        // Id
         function(re, im) { re },
 
         // Pos
@@ -432,7 +432,7 @@ which can be found in the LICENSE file.
         // Im
         function(re, im) { im },
 
-        // Copy
+        // Id
         function(re, im) { im },
 
         // Pos
