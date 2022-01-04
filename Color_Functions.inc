@@ -47,6 +47,13 @@ which can be found in the LICENSE file.
 #end // macro FunctionsPigmentRGB
 
 
+#macro HueFunction(PhaseFn)
+
+    function(re, im) { mod(360 + degrees(PhaseFn(re, im)), 360) }
+
+#end // macro HueFunction
+
+
 #macro RampFunction(Interval, ShiftFraction)
 
     #local HalfInterval = Interval/2;
