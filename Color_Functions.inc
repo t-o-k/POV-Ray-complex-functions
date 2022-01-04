@@ -46,6 +46,39 @@ which can be found in the LICENSE file.
 
 #end // macro FunctionsPigmentRGB
 
+
+#macro RampFunction(Interval, ShiftFraction)
+
+    #local HalfInterval = Interval/2;
+    #local SI = ShiftFraction*Interval;
+
+    function(s) {
+        mod(s + SI, Interval)
+        +
+        select(s + SI, +HalfInterval, -HalfInterval)
+    }
+
+#end // macro RampFunction
+
+
+#macro StripeFunction(Width, OutsideValue, InsideValue)
+                                                                       
+    #local HalfWidth = Width/2;
+
+    function (s) {
+        select(
+            s + HalfWidth,
+            OutsideValue,
+            select(
+                s - HalfWidth,
+                InsideValue,
+                OutsideValue
+            )
+        )
+    }
+
+#end // macro StripeFunction
+
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
 // https://en.wikipedia.org/wiki/HSL_and_HSV
