@@ -1,6 +1,8 @@
 # POV-Ray-complex-functions
 [POV-Ray](http://www.povray.org) v3.7 include file for working with complex functions
 
+[List](OPERATORS.md) of available complex operators
+
 ## Images created with the examples:
 
 ### Isosurface with domain colors of complex function with 5 poles
