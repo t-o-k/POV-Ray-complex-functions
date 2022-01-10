@@ -33,3 +33,14 @@
 [Source code](HueStripes_MagnStripes.pov)\
 ![Image - Plane - Hue stripes & Magnitude stripes](HueStripes_MagnStripes.png)
 
+### Mesh with domain colors of magnitude of complex function with 3 zeros and 1 pole (Linear vertical scale)
+[Source code](HueStripes_MagnHeight_NonLn_Magn.pov)\
+![Image - Mesh - Hue stripes & Magnitude height](HueStripes_MagnHeight_NonLn_Magn.png)
+
+### Mesh with domain colors of real part of complex function with 3 zeros and 1 pole (Linear vertical scale)
+[Source code](HueStripes_MagnHeight_NonLn_Real.pov)\
+![Image - Mesh - Hue stripes & Real height](HueStripes_MagnHeight_NonLn_Real.png)
+
+### Mesh with domain colors of imaginary part of complex function with 3 zeros and 1 pole (Linear vertical scale)
+[Source code](HueStripes_MagnHeight_NonLn_Imag.pov)\
+![Image - Mesh - Hue stripes & Imag height](HueStripes_MagnHeight_NonLn_Imag.png)
