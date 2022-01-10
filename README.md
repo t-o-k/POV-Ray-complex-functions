@@ -13,6 +13,10 @@
 [Source code](Two_Zeros_Two_Poles.pov)\
 ![Image - Mesh - Two zeros & Two poles](Two_Zeros_Two_Poles.png)
 
+### Mesh with domain colors of complex function with 3 zeros and 1 pole
+[Source code](HueStripes_MagnHeight.pov)\
+![Image - Mesh - Hue stripes & Magnitude height](HueStripes_MagnHeight.png)
+
 ### Plane with domain colors of complex function with 3 zeros and 1 pole
 [Source code](HueRamps_MagnRamps.pov)\
 ![Image - Plane - Hue ramps & Magnitude ramps](HueRamps_MagnRamps.png)
