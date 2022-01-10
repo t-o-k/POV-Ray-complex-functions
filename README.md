@@ -13,22 +13,23 @@
 [Source code](Two_Zeros_Two_Poles.pov)\
 ![Image - Mesh - Two zeros & Two poles](Two_Zeros_Two_Poles.png)
 
-### Mesh with domain colors of complex function with 3 zeros and 1 pole
+### Mesh with domain colors of complex function with 3 zeros and 1 pole (Ln magnitude scale)
 [Source code](HueStripes_MagnHeight.pov)\
 ![Image - Mesh - Hue stripes & Magnitude height](HueStripes_MagnHeight.png)
 
-### Plane with domain colors of complex function with 3 zeros and 1 pole
+### Plane with domain colors of complex function with 3 zeros and 1 pole (Ln magnitude scale)
 [Source code](HueRamps_MagnRamps.pov)\
 ![Image - Plane - Hue ramps & Magnitude ramps](HueRamps_MagnRamps.png)
 
-### Plane with domain colors of complex function with 3 zeros and 1 pole
+### Plane with domain colors of complex function with 3 zeros and 1 pole (Ln magnitude scale)
 [Source code](HueRamps_MagnStripes.pov)\
 ![Image - Plane - Hue ramps & Magnitude stripes](HueRamps_MagnStripes.png)
 
-### Plane with domain colors of complex function with 3 zeros and 1 pole
+### Plane with domain colors of complex function with 3 zeros and 1 pole (Ln magnitude scale)
 [Source code](HueStripes_MagnRamps.pov)\
 ![Image - Plane - Hue stripes & Magnitude ramps](HueStripes_MagnRamps.png)
 
-### Plane with domain colors of complex function with 3 zeros and 1 pole
+### Plane with domain colors of complex function with 3 zeros and 1 pole (Ln magnitude scale)
 [Source code](HueStripes_MagnStripes.pov)\
 ![Image - Plane - Hue stripes & Magnitude stripes](HueStripes_MagnStripes.png)
+
