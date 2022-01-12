@@ -14,7 +14,7 @@ Im(Z) = im
 ```
 
 ### Isosurface with domain colors of complex function
-### Fn(Z) = 1/(Z^5 - 2)^2
+### F(Z) = 1/(Z^5 - 2)^2
 
 | x-axis |  y-axis   | z-axis |
 | ------ | --------- | ------ |
@@ -24,7 +24,7 @@ Im(Z) = im
 ![Image - Isosurface - Five poles](FivePoles_Isosurface.png)
 
 ### Mesh with domain colors of complex function
-### Fn(Z) = (Z^2 + 1)/(Z^2 - 1)
+### F(Z) = (Z^2 + 1)/(Z^2 - 1)
 
 | x-axis |  y-axis   | z-axis |
 | ------ | --------- | ------ |
@@ -34,7 +34,7 @@ Im(Z) = im
 ![Image - Mesh - Two zeros & Two poles](Two_Zeros_Two_Poles.png)
 
 ### Mesh with domain colors of complex function
-### Fn(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
+### F(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
 
 | x-axis |     y-axis    | z-axis |
 | ------ | ------------- | ------ |
@@ -44,7 +44,7 @@ Im(Z) = im
 ![Image - Mesh - Hue stripes & Magnitude height](HueStripes_MagnHeight.png)
 
 ### Plane with domain colors of complex function (Ln magnitude scale)
-### Fn(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
+### F(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
 
 | x-axis | z-axis |
 | ------ | ------ |
@@ -54,7 +54,7 @@ Im(Z) = im
 ![Image - Plane - Hue ramps & Magnitude ramps](HueRamps_MagnRamps.png)
 
 ### Plane with domain colors of complex function (Ln magnitude scale)
-### Fn(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
+### F(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
 
 | x-axis | z-axis |
 | ------ | ------ |
@@ -64,7 +64,7 @@ Im(Z) = im
 ![Image - Plane - Hue ramps & Magnitude stripes](HueRamps_MagnStripes.png)
 
 ### Plane with domain colors of complex function (Ln magnitude scale)
-### Fn(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
+### F(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
 
 | x-axis | z-axis |
 | ------ | ------ |
@@ -74,7 +74,7 @@ Im(Z) = im
 ![Image - Plane - Hue stripes & Magnitude ramps](HueStripes_MagnRamps.png)
 
 ### Plane with domain colors of complex function (Ln magnitude scale)
-### Fn(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
+### F(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
 
 | x-axis | z-axis |
 | ------ | ------ |
@@ -84,7 +84,7 @@ Im(Z) = im
 ![Image - Plane - Hue stripes & Magnitude stripes](HueStripes_MagnStripes.png)
 
 ### Mesh with domain colors of magnitude of complex function
-### Fn(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
+### F(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
 
 | x-axis |  y-axis   | z-axis |
 | ------ | --------- | ------ |
@@ -94,7 +94,7 @@ Im(Z) = im
 ![Image - Mesh - Hue stripes & Magnitude height](HueStripes_MagnHeight_NonLn_Magn.png)
 
 ### Mesh with domain colors of real part of complex function
-### Fn(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
+### F(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
 
 | x-axis |   y-axis   | z-axis |
 | ------ | ---------- | ------ |
@@ -104,7 +104,7 @@ Im(Z) = im
 ![Image - Mesh - Hue stripes & Real height](HueStripes_MagnHeight_NonLn_Real.png)
 
 ### Mesh with domain colors of imaginary part of complex function
-### Fn(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
+### F(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
 
 | x-axis |   y-axis   | z-axis |
 | ------ | ---------- | ------ |
