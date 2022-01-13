@@ -112,3 +112,14 @@ Im(Z) = im
 
 [Source code](HueStripes_MagnHeight_NonLn_Imag.pov)\
 ![Image - Mesh - Hue stripes & Imag height](HueStripes_MagnHeight_NonLn_Imag.png)
+
+### Plane with domain colors of iterated complex function (Ln magnitude scale)
+### G(Z) = (1 + j)*Sin(Z)
+### F(Z) = G^7(Z) = G(G(G(G(G(G(G(Z)))))))
+
+| x-axis | z-axis |
+| ------ | ------ |
+|   re   |   im   |
+
+[Source code](Iterated_Sine.pov)\
+![Image - Plane - Iterated function](Iterated_Sine.png)
