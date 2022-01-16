@@ -134,18 +134,8 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 #declare RealFn = FinalFunction(ReFunctions);
 #declare ImagFn = FinalFunction(ImFunctions);
 
-#declare MagnitudeFn =
-    MagnitudeFunction(
-        FinalFunction(ReFunctions),
-        FinalFunction(ImFunctions)
-    )
-;
-#declare PhaseFn =
-    PhaseFunction(
-        FinalFunction(ReFunctions),
-        FinalFunction(ImFunctions)
-    )
-;
+#declare MagnitudeFn = MagnitudeFunction(RealFn, ImagFn);
+#declare PhaseFn = PhaseFunction(RealFn, ImagFn);
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
