@@ -3,7 +3,7 @@
 
 https://github.com/t-o-k/POV-Ray-complex-functions
 
-Copyright (c) 2021 Tor Olav Kristensen, http://subcube.com
+Copyright (c) 2021-2022 Tor Olav Kristensen, http://subcube.com
 
 Use of this source code is governed by the GNU Lesser General Public License version 3,
 which can be found in the LICENSE file.
@@ -20,24 +20,47 @@ global_settings { assumed_gamma 1.0 }
 #include "Color_Functions.inc"
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
-
 /*
-https://matlabarticlesworld.blogspot.com/2020/01/what-is-coolest-thing-you-can-do-with.html
+The function below was found here:
 
-Fn(Z) = 1/(Z^5 - 2)^2
+    https://matlabarticlesworld.blogspot.com/2020/01/what-is-coolest-thing-you-can-do-with.html
 
-Fn =
-    Inv(
-        Sqr(
-            Sub(
-                Pow(
-                    Z(),
-                    Const(5.0)
-                ),
-                Const(2.0)
+
+Prefix/Infix notation:
+
+    Fn(Z) = 1/(Z^5 - 2)^2
+
+
+Prefix notation:
+
+    Fn(Z) =
+        Inv(
+            Sqr(
+                Sub(
+                    Pow(
+                        Z(),
+                        Const(5.0)
+                    ),
+                    Const(2.0)
+                )
             )
         )
-    )
+
+
+Postfix notation:
+
+    (Z)Fn =
+        (
+            (
+                (
+                    (
+                        ()Z,
+                        (5.0)Const
+                    )Pow,
+                    (2.0)Const
+                )Sub
+            )Sqr
+        )Inv
 */
 
 #declare No = 7;
@@ -72,74 +95,50 @@ Fn =
 
 AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 
-#declare MagnitudeFn =
-    MagnitudeFunction(
-        FinalFunction(ReFunctions),
-        FinalFunction(ImFunctions)
-    )
-;
-#declare PhaseFn =
-    PhaseFunction(
-        FinalFunction(ReFunctions),
-        FinalFunction(ImFunctions)
-    )
-;
+#declare RealFn = FinalFunction(ReFunctions);
+#declare ImagFn = FinalFunction(ImFunctions);
+
+#declare MagnitudeFn = MagnitudeFunction(RealFn, ImagFn);
+#declare PhaseFn = PhaseFunction(RealFn, ImagFn);
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
-// Hue
-#declare H_Fn = function(re, im) { mod(360 + degrees(PhaseFn(re, im)), 360) };
+#declare HueFn = HueFunction(PhaseFn);
+            
+#declare HueRampFn =
+    RampFunction(
+        60.00, // Ramp interval (Degrees)
+        0.50   // Shift fraction
+    )
+;
+
+#declare HueStripeFn =
+    StripeFunction(
+        4.00,  // Stripe width (Degrees)
+        0.50,  // Outside value
+        0.00   // Inside value
+    )
+;
+                                                                       
+#declare LightnessFn = function(re, im) { HueStripeFn(HueRampFn(HueFn(re, im))) };
 
 // Saturation
 #declare S = 1.0;
-
-#declare PhaseInterval = 60; // Degrees
-#declare HalfPhaseInterval = PhaseInterval/2;
-#declare IntervalFn =
-    function(p) {
-        mod(p - HalfPhaseInterval, PhaseInterval)
-        +
-        select(p - HalfPhaseInterval, +HalfPhaseInterval, -HalfPhaseInterval)
-    }
-;
-
-#declare NoLightness = 0.0;
-#declare HalfLightness = 0.5;
-#declare StripeWidth = 4.0; // Degrees
-#declare HalfStripeWidth = StripeWidth/2;
-#declare StripeFn =
-    function(p) {
-        select(
-            p + HalfStripeWidth,
-            HalfLightness,
-            select(
-                p - HalfStripeWidth,
-                NoLightness,
-                HalfLightness
-            )
-        )
-    }
-;
-
-// Lightness
-#declare L_Fn = function(re, im) { StripeFn(IntervalFn(H_Fn(re, im))) };
-
-#declare L = 0.5;
 
 #declare pMin = <-3.0, -0.2, -2.0>;
 #declare pMax = <+3.0, +2.0, +2.0>;
 
 isosurface {
     function { y - MagnitudeFn(x, z) }
+    accuracy 0.001
+    max_gradient 30
     contained_by {
         box { pMin, pMax }
     }
-    accuracy 0.001
-    max_gradient 30
     FunctionsPigmentRGB(
-        function { HSL_RD_FN(H_Fn(x, z), S, L_Fn(x, z)) },
-        function { HSL_GN_FN(H_Fn(x, z), S, L_Fn(x, z)) },
-        function { HSL_BU_FN(H_Fn(x, z), S, L_Fn(x, z)) }
+        function { HSL_RD_FN(HueFn(x, z), S, LightnessFn(x, z)) },
+        function { HSL_GN_FN(HueFn(x, z), S, LightnessFn(x, z)) },
+        function { HSL_BU_FN(HueFn(x, z), S, LightnessFn(x, z)) }
     )
 }
 
