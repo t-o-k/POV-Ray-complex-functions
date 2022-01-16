@@ -20,25 +20,48 @@ global_settings { assumed_gamma 1.0 }
 #include "Function_Meshes.inc"
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
-
 /*
-Fn(Z) = (Z^2 + 1)/(Z^2 - 1)
+Prefix/Infix notation:
 
-Fn =
-    Div(
-        Add(
-            Sqr(
-                Z()
+    Fn(Z) = (Z^2 + 1)/(Z^2 - 1)
+
+
+Prefix notation:
+
+    Fn(Z) =
+        Div(
+            Add(
+                Sqr(
+                    Z()
+                ),
+                Const(1.0)
             ),
-            Const(1.0)
-        ),
-        Sub(
-            Sqr(
-                Z()
-            ),
-            Const(1.0)
+            Sub(
+                Sqr(
+                    Z()
+                ),
+                Const(1.0)
+            )
         )
-    )
+
+
+Postfix notation:
+
+    (Z)Fn =
+        (
+            (
+                (
+                    ()Z
+                )Sqr,
+                (1.0)Const
+            )Add,
+            (
+                (
+                    ()Z
+                )Sqr,
+                (1.0)Const
+            )Sub
+        )Div
 */
 
 
