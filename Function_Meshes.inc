@@ -245,9 +245,13 @@ which can be found in the LICENSE file.
                 #for (CntZ, 0, NoOfIntervalsZ)
                     #local Zm = Z0 - HDZ;
                     #local Zp = Z0 + HDZ;
-                    #local vX = (<Xp, Fn(Xp, Z0), Z0> - <Xm, Fn(Xm, Z0), Z0>)/TwoHDX;
-                    #local vZ = (<X0, Fn(X0, Zp), Zp> - <X0, Fn(X0, Zm), Zm>)/TwoHDZ;
-                    vnormalize(vcross(vZ, vX))
+                    vnormalize(
+                        <
+                            (Fn(Xm, Z0) - Fn(Xp, Z0))/TwoHDX,
+                            1,
+                            (Fn(X0, Zm) - Fn(X0, Zp))/TwoHDZ
+                        >
+                    )
                     #local Z0 = Z0 + DZ;
                 #end // for
                 #local X0 = X0 + DX;
