@@ -24,6 +24,36 @@ Im(Z) = im
 ![Image - Isosurface - Five poles](FivePoles_Isosurface.png)
 
 ### Mesh with domain colors of a complex function
+### F(Z) = 1/(Z<sup>5</sup> - 2)<sup>2</sup>
+
+| x-axis |  y-axis   | z-axis |
+| ------ | --------- | ------ |
+|   re   | \|Fn(Z)\| |   im   |
+
+[Source code](FivePoles_ClippedMesh2_Magn.pov)\
+![Image - Mesh - Five poles - Magn](FivePoles_ClippedMesh2_Magn.png)
+
+### Mesh with domain colors of a complex function
+### F(Z) = 1/(Z<sup>5</sup> - 2)<sup>2</sup>
+
+| x-axis | y-axis | z-axis |
+| ------ | ------ | ------ |
+|   re   | Re(Z)  |   im   |
+
+[Source code](FivePoles_ClippedMesh2_Real.pov)\
+![Image - Mesh - Five poles - Real](FivePoles_ClippedMesh2_Real.png)
+
+### Mesh with domain colors of a complex function
+### F(Z) = 1/(Z<sup>5</sup> - 2)<sup>2</sup>
+
+| x-axis | y-axis | z-axis |
+| ------ | ------ | ------ |
+|   re   | Im(Z)  |   im   |
+
+[Source code](FivePoles_ClippedMesh2_Imag.pov)\
+![Image - Mesh - Five poles - Imag](FivePoles_ClippedMesh2_Imag.png)
+
+### Mesh with domain colors of a complex function
 ### F(Z) = (Z<sup>2</sup> + 1)/(Z<sup>2</sup> - 1)
 
 | x-axis |  y-axis   | z-axis |
