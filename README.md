@@ -120,8 +120,8 @@ Im(Z) = im
 | ------ | --------- | ------ |
 |   re   | \|Fn(Z)\| |   im   |
 
-[Source code](HueStripes_MagnHeight_NonLn_Magn.pov)\
-![Image - Mesh - Hue stripes & Magnitude height](HueStripes_MagnHeight_NonLn_Magn.png)
+[Source code](HueStripes_MagnHeight_NonLn.pov)\
+![Image - Mesh - Hue stripes & Magnitude height](HueStripes_MagnHeight_NonLn.png)
 
 ### Mesh with domain colors of real part of a complex function
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -130,8 +130,8 @@ Im(Z) = im
 | ------ | ---------- | ------ |
 |   re   | Re(Fn(Z))  |   im   |
 
-[Source code](HueStripes_MagnHeight_NonLn_Real.pov)\
-![Image - Mesh - Hue stripes & Real height](HueStripes_MagnHeight_NonLn_Real.png)
+[Source code](HueStripes_RealHeight_NonLn.pov)\
+![Image - Mesh - Hue stripes & Real height](HueStripes_RealHeight_NonLn.png)
 
 ### Mesh with domain colors of imaginary part of a complex function
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -140,8 +140,8 @@ Im(Z) = im
 | ------ | ---------- | ------ |
 |   re   | Im(Fn(Z))  |   im   |
 
-[Source code](HueStripes_MagnHeight_NonLn_Imag.pov)\
-![Image - Mesh - Hue stripes & Imag height](HueStripes_MagnHeight_NonLn_Imag.png)
+[Source code](HueStripes_ImagHeight_NonLn.pov)\
+![Image - Mesh - Hue stripes & Imag height](HueStripes_ImagHeight_NonLn.png)
 
 ### Plane with domain colors of the 7th iterate of a complex function (Ln magnitude scale)
 ### G(Z) = (1 + j)*Sin(Z)
