@@ -16,9 +16,9 @@ which can be found in the LICENSE file.
 global_settings { assumed_gamma 1.0 }
 
 #include "colors.inc"
-#include "Complex_Functions.inc"
-#include "Color_Functions.inc"
-#include "Function_Meshes.inc"
+#include "../Complex_Functions.inc"
+#include "../Color_Functions.inc"
+#include "../Function_Meshes.inc"
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 /*
@@ -179,21 +179,24 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
         0.00   // Inside value
     )
 ;
+                                                                       
+#declare LnMagnitudeFn = function(re, im) { ln(MagnitudeFn(re, im)) };
 
 #declare LightnessFn = function(re, im) { HueStripeFn(HueRampFn(HueFn(re, im))) };
 
 #declare Saturation = 1.00;
 
-#declare pMin = <-8.0, -15.0, -8.0>;
-#declare pMax = <+8.0, +15.0, +8.0>;
+#declare MinX = -8.0;
+#declare MaxX = +8.0;
 
-#declare NoOfIntervalsX = 400;
-#declare NoOfIntervalsZ = 400;
+#declare MinZ = -8.0;
+#declare MaxZ = +8.0;
+
+#declare NoOfIntervalsX = 1600;
+#declare NoOfIntervalsZ = 1600;
 
 object {
-    ClippedFunctionMesh2(MagnitudeFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
-    // ClippedFunctionMesh2(RealFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
-    // ClippedFunctionMesh2(ImagFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
+    FunctionMesh2(LnMagnitudeFn, MinX, MaxX, MinZ, MaxZ, NoOfIntervalsX, NoOfIntervalsZ)
     FunctionsPigmentRGB(
         function { HSL_RD_FN(HueFn(x, z), Saturation, LightnessFn(x, z)) },
         function { HSL_GN_FN(HueFn(x, z), Saturation, LightnessFn(x, z)) },
@@ -206,17 +209,17 @@ object {
 background { color Blue/6 + Green/12 }
 
 light_source {
-    100*<+2,  0, -4>
+    100*<+2, +3, -4>
     color 1.2*White
     shadowless
-    rotate +250*y
+    rotate +210*y
 }
 
 camera {
-    angle 26
-    location < 0, +35, -90>
-    look_at <+1, +2,  0>
-    rotate +250*y
+    angle 48
+    location <0, 8, -26>
+    look_at <1, 3, 0>
+    rotate +210*y
 }
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10

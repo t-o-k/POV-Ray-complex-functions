@@ -16,8 +16,8 @@ which can be found in the LICENSE file.
 global_settings { assumed_gamma 1.0 }
 
 #include "colors.inc"
-#include "Complex_Functions.inc"
-#include "Color_Functions.inc"
+#include "../Complex_Functions.inc"
+#include "../Color_Functions.inc"
 
 default {
     texture {
@@ -191,29 +191,21 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 
 #declare LnMagnitudeFn = function(re, im) { ln(MagnitudeFn(re, im)) };
 
+#declare MagnitudeRampInterval = 1.00;  // (Degrees)
 #declare MagnitudeRampFn =
     RampFunction(
-        1.00,  // Ramp interval
-        0.50   // Shift fraction
-    )
-;
-#declare MagnitudeStripeFn =
-    StripeFunction(
-        0.05,  // Stripe width,
-        0.00,  // Outside value
-        0.50   // Inside value
+        MagnitudeRampInterval,
+        0.00  // Shift fraction
     )
 ;
 
 #declare LightnessFn =
     function(re, im) {
-        (
-            (0.50 + HueRampFn(HueFn(re, im))/HueRampInterval)
-            -
-            MagnitudeStripeFn(MagnitudeRampFn(LnMagnitudeFn(re, im)))
-        )
+        (0.50 + HueRampFn(HueFn(re, im))/HueRampInterval)
         *
-        0.80
+        (0.50 + MagnitudeRampFn(LnMagnitudeFn(re, im))/MagnitudeRampInterval)
+        // *
+        // 0.80
     }
 ;
 

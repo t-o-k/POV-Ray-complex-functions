@@ -16,8 +16,8 @@ which can be found in the LICENSE file.
 global_settings { assumed_gamma 1.0 }
 
 #include "colors.inc"
-#include "Complex_Functions.inc"
-#include "Function_Meshes.inc"
+#include "../Complex_Functions.inc"
+#include "../Function_Meshes.inc"
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 /*

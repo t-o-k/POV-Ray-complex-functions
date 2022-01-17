@@ -20,8 +20,8 @@ Im(Z) = im
 | ------ | --------- | ------ |
 |   re   | \|Fn(Z)\| |   im   |
 
-[Source code](FivePoles_Isosurface.pov)\
-![Image - Isosurface - Five poles](FivePoles_Isosurface.png)
+[Source code](Examples/FivePoles_Isosurface.pov)\
+![Image - Isosurface - Five poles](Examples/FivePoles_Isosurface.png)
 
 ### Mesh with domain colors of a complex function
 ### F(Z) = 1/(Z<sup>5</sup> - 2)<sup>2</sup>
@@ -30,8 +30,8 @@ Im(Z) = im
 | ------ | --------- | ------ |
 |   re   | \|Fn(Z)\| |   im   |
 
-[Source code](FivePoles_ClippedMesh2_Magn.pov)\
-![Image - Mesh - Five poles - Magn](FivePoles_ClippedMesh2_Magn.png)
+[Source code](Examples/FivePoles_ClippedMesh2_Magn.pov)\
+![Image - Mesh - Five poles - Magn](Examples/FivePoles_ClippedMesh2_Magn.png)
 
 ### Mesh with domain colors of a complex function
 ### F(Z) = 1/(Z<sup>5</sup> - 2)<sup>2</sup>
@@ -40,8 +40,8 @@ Im(Z) = im
 | ------ | ------ | ------ |
 |   re   | Re(Z)  |   im   |
 
-[Source code](FivePoles_ClippedMesh2_Real.pov)\
-![Image - Mesh - Five poles - Real](FivePoles_ClippedMesh2_Real.png)
+[Source code](Examples/FivePoles_ClippedMesh2_Real.pov)\
+![Image - Mesh - Five poles - Real](Examples/FivePoles_ClippedMesh2_Real.png)
 
 ### Mesh with domain colors of a complex function
 ### F(Z) = 1/(Z<sup>5</sup> - 2)<sup>2</sup>
@@ -50,8 +50,8 @@ Im(Z) = im
 | ------ | ------ | ------ |
 |   re   | Im(Z)  |   im   |
 
-[Source code](FivePoles_ClippedMesh2_Imag.pov)\
-![Image - Mesh - Five poles - Imag](FivePoles_ClippedMesh2_Imag.png)
+[Source code](Examples/FivePoles_ClippedMesh2_Imag.pov)\
+![Image - Mesh - Five poles - Imag](Examples/FivePoles_ClippedMesh2_Imag.png)
 
 ### Mesh with domain colors of a complex function
 ### F(Z) = (Z<sup>2</sup> + 1)/(Z<sup>2</sup> - 1)
@@ -60,8 +60,8 @@ Im(Z) = im
 | ------ | --------- | ------ |
 |   re   | \|Fn(Z)\| |   im   |
 
-[Source code](Two_Zeros_Two_Poles.pov)\
-![Image - Mesh - Two zeros & Two poles](Two_Zeros_Two_Poles.png)
+[Source code](Examples/Two_Zeros_Two_Poles.pov)\
+![Image - Mesh - Two zeros & Two poles](Examples/Two_Zeros_Two_Poles.png)
 
 ### Mesh with domain colors of a complex function
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -70,8 +70,8 @@ Im(Z) = im
 | ------ | ------------- | ------ |
 |   re   | Ln(\|Fn(Z)\|) |   im   |
 
-[Source code](HueStripes_MagnHeight.pov)\
-![Image - Mesh - Hue stripes & Magnitude height](HueStripes_MagnHeight.png)
+[Source code](Examples/HueStripes_MagnHeight.pov)\
+![Image - Mesh - Hue stripes & Magnitude height](Examples/HueStripes_MagnHeight.png)
 
 ### Plane with domain colors of a complex function (Ln magnitude scale)
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -80,8 +80,8 @@ Im(Z) = im
 | ------ | ------ |
 |   re   |   im   |
 
-[Source code](HueRamps_MagnRamps.pov)\
-![Image - Plane - Hue ramps & Magnitude ramps](HueRamps_MagnRamps.png)
+[Source code](Examples/HueRamps_MagnRamps.pov)\
+![Image - Plane - Hue ramps & Magnitude ramps](Examples/HueRamps_MagnRamps.png)
 
 ### Plane with domain colors of a complex function (Ln magnitude scale)
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -90,8 +90,8 @@ Im(Z) = im
 | ------ | ------ |
 |   re   |   im   |
 
-[Source code](HueRamps_MagnStripes.pov)\
-![Image - Plane - Hue ramps & Magnitude stripes](HueRamps_MagnStripes.png)
+[Source code](Examples/HueRamps_MagnStripes.pov)\
+![Image - Plane - Hue ramps & Magnitude stripes](Examples/HueRamps_MagnStripes.png)
 
 ### Plane with domain colors of a complex function (Ln magnitude scale)
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -100,8 +100,8 @@ Im(Z) = im
 | ------ | ------ |
 |   re   |   im   |
 
-[Source code](HueStripes_MagnRamps.pov)\
-![Image - Plane - Hue stripes & Magnitude ramps](HueStripes_MagnRamps.png)
+[Source code](Examples/HueStripes_MagnRamps.pov)\
+![Image - Plane - Hue stripes & Magnitude ramps](Examples/HueStripes_MagnRamps.png)
 
 ### Plane with domain colors of a complex function (Ln magnitude scale)
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -110,8 +110,8 @@ Im(Z) = im
 | ------ | ------ |
 |   re   |   im   |
 
-[Source code](HueStripes_MagnStripes.pov)\
-![Image - Plane - Hue stripes & Magnitude stripes](HueStripes_MagnStripes.png)
+[Source code](Examples/HueStripes_MagnStripes.pov)\
+![Image - Plane - Hue stripes & Magnitude stripes](Examples/HueStripes_MagnStripes.png)
 
 ### Mesh with domain colors of magnitude of a complex function
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -120,8 +120,8 @@ Im(Z) = im
 | ------ | --------- | ------ |
 |   re   | \|Fn(Z)\| |   im   |
 
-[Source code](HueStripes_MagnHeight_NonLn.pov)\
-![Image - Mesh - Hue stripes & Magnitude height](HueStripes_MagnHeight_NonLn.png)
+[Source code](Examples/HueStripes_MagnHeight_NonLn.pov)\
+![Image - Mesh - Hue stripes & Magnitude height](Examples/HueStripes_MagnHeight_NonLn.png)
 
 ### Mesh with domain colors of real part of a complex function
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -130,8 +130,8 @@ Im(Z) = im
 | ------ | ---------- | ------ |
 |   re   | Re(Fn(Z))  |   im   |
 
-[Source code](HueStripes_RealHeight_NonLn.pov)\
-![Image - Mesh - Hue stripes & Real height](HueStripes_RealHeight_NonLn.png)
+[Source code](Examples/HueStripes_RealHeight_NonLn.pov)\
+![Image - Mesh - Hue stripes & Real height](Examples/HueStripes_RealHeight_NonLn.png)
 
 ### Mesh with domain colors of imaginary part of a complex function
 ### F(Z) = (-Z<sup>3</sup> + Z<sup>2</sup>*j + 1)/(Z - 1 + j)<sup>2</sup>
@@ -140,8 +140,8 @@ Im(Z) = im
 | ------ | ---------- | ------ |
 |   re   | Im(Fn(Z))  |   im   |
 
-[Source code](HueStripes_ImagHeight_NonLn.pov)\
-![Image - Mesh - Hue stripes & Imag height](HueStripes_ImagHeight_NonLn.png)
+[Source code](Examples/HueStripes_ImagHeight_NonLn.pov)\
+![Image - Mesh - Hue stripes & Imag height](Examples/HueStripes_ImagHeight_NonLn.png)
 
 ### Plane with domain colors of the 7th iterate of a complex function (Ln magnitude scale)
 ### G(Z) = (1 + j)*Sin(Z)
@@ -151,5 +151,5 @@ Im(Z) = im
 | ------ | ------ |
 |   re   |   im   |
 
-[Source code](Iterated_Sine.pov)\
-![Image - Plane - Iterated function](Iterated_Sine.png)
+[Source code](Examples/Iterated_Sine.pov)\
+![Image - Plane - Iterated function](Examples/Iterated_Sine.png)

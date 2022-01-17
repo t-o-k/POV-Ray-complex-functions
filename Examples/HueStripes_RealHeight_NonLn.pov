@@ -6,7 +6,7 @@ https://github.com/t-o-k/POV-Ray-complex-functions
 Copyright (c) 2022 Tor Olav Kristensen, http://subcube.com
 
 Use of this source code is governed by the GNU Lesser General Public License version 3,
-hwhich can be found in the LICENSE file.
+which can be found in the LICENSE file.
 
 */
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
@@ -16,18 +16,9 @@ hwhich can be found in the LICENSE file.
 global_settings { assumed_gamma 1.0 }
 
 #include "colors.inc"
-#include "Complex_Functions.inc"
-#include "Color_Functions.inc"
-
-default {
-    texture {
-        pigment { color White }
-        finish {
-            diffuse 0
-            emission color White
-        }
-    }
-}
+#include "../Complex_Functions.inc"
+#include "../Color_Functions.inc"
+#include "../Function_Meshes.inc"
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 /*
@@ -164,18 +155,11 @@ Postfix:
 
 AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 
-#declare MagnitudeFn =
-    MagnitudeFunction(
-        FinalFunction(ReFunctions),
-        FinalFunction(ImFunctions)
-    )
-;
-#declare PhaseFn =
-    PhaseFunction(
-        FinalFunction(ReFunctions),
-        FinalFunction(ImFunctions)
-    )
-;
+#declare RealFn = FinalFunction(ReFunctions);
+#declare ImagFn = FinalFunction(ImFunctions);
+
+#declare MagnitudeFn = MagnitudeFunction(RealFn, ImagFn);
+#declare PhaseFn = PhaseFunction(RealFn, ImagFn);
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
@@ -183,10 +167,11 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 
 #declare HueRampFn =
     RampFunction(
-        15.00,  // Interval (Degrees)
-        0.00    // Shift fraction
+        15.00, // Ramp interval (Degrees)
+        0.00   // Shift fraction
     )
 ;
+
 #declare HueStripeFn =
     StripeFunction(
         2.00,  // Stripe width (Degrees)
@@ -195,34 +180,20 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
     )
 ;
 
-#declare LnMagnitudeFn = function(re, im) { ln(MagnitudeFn(re, im)) };
-
-#declare MagnitudeRampFn =
-    RampFunction(
-        1.00,  // Interval
-        0.50   // Shift fraction
-    )
-;
-#declare MagnitudeStripeFn =
-    StripeFunction(
-        0.05,  // Stripe width
-        0.00,  // Outside value
-        0.50   // Inside value
-    )
-;
-
-#declare LightnessFn =
-    function(re, im) {
-        HueStripeFn(HueRampFn(HueFn(re, im)))
-        +
-        MagnitudeStripeFn(MagnitudeRampFn(LnMagnitudeFn(re, im)))
-    }
-;
+#declare LightnessFn = function(re, im) { HueStripeFn(HueRampFn(HueFn(re, im))) };
 
 #declare Saturation = 1.00;
 
-plane {
-    +y, 0
+#declare pMin = <-8.0, -15.0, -8.0>;
+#declare pMax = <+8.0, +15.0, +8.0>;
+
+#declare NoOfIntervalsX = 400;
+#declare NoOfIntervalsZ = 400;
+
+object {
+    // ClippedFunctionMesh2(MagnitudeFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
+    ClippedFunctionMesh2(RealFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
+    // ClippedFunctionMesh2(ImagFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
     FunctionsPigmentRGB(
         function { HSL_RD_FN(HueFn(x, z), Saturation, LightnessFn(x, z)) },
         function { HSL_GN_FN(HueFn(x, z), Saturation, LightnessFn(x, z)) },
@@ -232,13 +203,20 @@ plane {
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
+background { color Blue/6 + Green/12 }
+
+light_source {
+    100*<+2,  0, -4>
+    color 1.2*White
+    shadowless
+    rotate +250*y
+}
+
 camera {
-    orthographic
-    direction -y
-    right +12*x
-    up +12*z
-    sky +z
-    location +y
+    angle 26
+    location < 0, +35, -90>
+    look_at <+1, +2,  0>
+    rotate +250*y
 }
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10

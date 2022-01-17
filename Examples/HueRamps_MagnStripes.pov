@@ -16,9 +16,18 @@ which can be found in the LICENSE file.
 global_settings { assumed_gamma 1.0 }
 
 #include "colors.inc"
-#include "Complex_Functions.inc"
-#include "Color_Functions.inc"
-#include "Function_Meshes.inc"
+#include "../Complex_Functions.inc"
+#include "../Color_Functions.inc"
+
+default {
+    texture {
+        pigment { color White }
+        finish {
+            diffuse 0
+            emission color White
+        }
+    }
+}
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 /*
@@ -155,45 +164,63 @@ Postfix:
 
 AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 
-#declare RealFn = FinalFunction(ReFunctions);
-#declare ImagFn = FinalFunction(ImFunctions);
-
-#declare MagnitudeFn = MagnitudeFunction(RealFn, ImagFn);
-#declare PhaseFn = PhaseFunction(RealFn, ImagFn);
+#declare MagnitudeFn =
+    MagnitudeFunction(
+        FinalFunction(ReFunctions),
+        FinalFunction(ImFunctions)
+    )
+;
+#declare PhaseFn =
+    PhaseFunction(
+        FinalFunction(ReFunctions),
+        FinalFunction(ImFunctions)
+    )
+;
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
 #declare HueFn = HueFunction(PhaseFn);
 
+#declare HueRampInterval = 15.00;  // (Degrees)
 #declare HueRampFn =
     RampFunction(
-        15.00, // Ramp interval (Degrees)
-        0.00   // Shift fraction
+        HueRampInterval,
+        0.50  // Shift fraction
     )
 ;
 
-#declare HueStripeFn =
+#declare LnMagnitudeFn = function(re, im) { ln(MagnitudeFn(re, im)) };
+
+#declare MagnitudeRampFn =
+    RampFunction(
+        1.00,  // Ramp interval
+        0.50   // Shift fraction
+    )
+;
+#declare MagnitudeStripeFn =
     StripeFunction(
-        2.00,  // Stripe width (Degrees)
-        0.50,  // Outside value
-        0.00   // Inside value
+        0.05,  // Stripe width,
+        0.00,  // Outside value
+        0.50   // Inside value
     )
 ;
 
-#declare LightnessFn = function(re, im) { HueStripeFn(HueRampFn(HueFn(re, im))) };
+#declare LightnessFn =
+    function(re, im) {
+        (
+            (0.50 + HueRampFn(HueFn(re, im))/HueRampInterval)
+            -
+            MagnitudeStripeFn(MagnitudeRampFn(LnMagnitudeFn(re, im)))
+        )
+        *
+        0.80
+    }
+;
 
 #declare Saturation = 1.00;
 
-#declare pMin = <-8.0, -15.0, -8.0>;
-#declare pMax = <+8.0, +15.0, +8.0>;
-
-#declare NoOfIntervalsX = 400;
-#declare NoOfIntervalsZ = 400;
-
-object {
-    // ClippedFunctionMesh2(MagnitudeFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
-    // ClippedFunctionMesh2(RealFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
-    ClippedFunctionMesh2(ImagFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
+plane {
+    +y, 0
     FunctionsPigmentRGB(
         function { HSL_RD_FN(HueFn(x, z), Saturation, LightnessFn(x, z)) },
         function { HSL_GN_FN(HueFn(x, z), Saturation, LightnessFn(x, z)) },
@@ -203,20 +230,13 @@ object {
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 
-background { color Blue/6 + Green/12 }
-
-light_source {
-    100*<+2,  0, -4>
-    color 1.2*White
-    shadowless
-    rotate +250*y
-}
-
 camera {
-    angle 26
-    location < 0, +35, -90>
-    look_at <+1, +2,  0>
-    rotate +250*y
+    orthographic
+    direction -y
+    right +12*x
+    up +12*z
+    sky +z
+    location +y
 }
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10

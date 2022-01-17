@@ -6,7 +6,7 @@ https://github.com/t-o-k/POV-Ray-complex-functions
 Copyright (c) 2022 Tor Olav Kristensen, http://subcube.com
 
 Use of this source code is governed by the GNU Lesser General Public License version 3,
-which can be found in the LICENSE file.
+hwhich can be found in the LICENSE file.
 
 */
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
@@ -16,8 +16,8 @@ which can be found in the LICENSE file.
 global_settings { assumed_gamma 1.0 }
 
 #include "colors.inc"
-#include "Complex_Functions.inc"
-#include "Color_Functions.inc"
+#include "../Complex_Functions.inc"
+#include "../Color_Functions.inc"
 
 default {
     texture {
@@ -183,37 +183,41 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 
 #declare HueRampFn =
     RampFunction(
-        15.00,  // Ramp interval (Degrees)
+        15.00,  // Interval (Degrees)
         0.00    // Shift fraction
     )
 ;
 #declare HueStripeFn =
     StripeFunction(
         2.00,  // Stripe width (Degrees)
-        1.00,  // Outside value
+        0.50,  // Outside value
         0.00   // Inside value
     )
-;                                                                       
+;
 
 #declare LnMagnitudeFn = function(re, im) { ln(MagnitudeFn(re, im)) };
 
-#declare MagnitudeRampInterval = 1.00;
 #declare MagnitudeRampFn =
     RampFunction(
-        MagnitudeRampInterval,
-        0.00   // Shift fraction
+        1.00,  // Interval
+        0.50   // Shift fraction
+    )
+;
+#declare MagnitudeStripeFn =
+    StripeFunction(
+        0.05,  // Stripe width
+        0.00,  // Outside value
+        0.50   // Inside value
     )
 ;
 
 #declare LightnessFn =
     function(re, im) {
         HueStripeFn(HueRampFn(HueFn(re, im)))
-        *
-        (0.50 + MagnitudeRampFn(LnMagnitudeFn(re, im))/MagnitudeRampInterval)
-        *
-        0.80
+        +
+        MagnitudeStripeFn(MagnitudeRampFn(LnMagnitudeFn(re, im)))
     }
-; 
+;
 
 #declare Saturation = 1.00;
 

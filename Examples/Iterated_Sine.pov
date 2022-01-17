@@ -16,8 +16,8 @@ hwhich can be found in the LICENSE file.
 global_settings { assumed_gamma 1.0 }
 
 #include "colors.inc"
-#include "Complex_Functions.inc"
-#include "Color_Functions.inc"
+#include "../Complex_Functions.inc"
+#include "../Color_Functions.inc"
 
 default {
     texture {

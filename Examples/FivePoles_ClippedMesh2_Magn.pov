@@ -16,11 +16,12 @@ which can be found in the LICENSE file.
 global_settings { assumed_gamma 1.0 }
 
 #include "colors.inc"
-#include "Complex_Functions.inc"
-#include "Color_Functions.inc"
-#include "Function_Meshes.inc"
+#include "../Complex_Functions.inc"
+#include "../Color_Functions.inc"
+#include "../Function_Meshes.inc"
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
+
 /*
 The function below was found here:
 
@@ -116,11 +117,11 @@ AssembleFunctions(PartTypes, Arguments, ReFunctions, ImFunctions)
 #declare pMin = <-3, -2, -2>;
 #declare pMax = <+3, +2, +2>;
 
-#declare NoOfIntervalsX = 1200;
-#declare NoOfIntervalsZ = 1200;
+#declare NoOfIntervalsX = 400;
+#declare NoOfIntervalsZ = 400;
 
 object {
-    ClippedFunctionMesh2(ImagFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
+    ClippedFunctionMesh2(MagnitudeFn, pMin, pMax, NoOfIntervalsX, NoOfIntervalsZ)
     FunctionsPigmentRGB(
         function { HSL_RD_FN(HueFn(x, z), Saturation, LightnessFn(x, z)) },
         function { HSL_GN_FN(HueFn(x, z), Saturation, LightnessFn(x, z)) },
