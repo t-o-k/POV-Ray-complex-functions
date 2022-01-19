@@ -18,7 +18,7 @@ Im(Z) = im
 
 | x-axis |  y-axis   | z-axis |
 | ------ | --------- | ------ |
-|   re   | \|Fn(Z)\| |   im   |
+|   re   | \|F(Z)\| |   im   |
 
 [Source code](Examples/FivePoles_Isosurface.pov)\
 ![Image - Isosurface - Five poles](Examples/FivePoles_Isosurface.png)
@@ -28,7 +28,7 @@ Im(Z) = im
 
 | x-axis |  y-axis   | z-axis |
 | ------ | --------- | ------ |
-|   re   | \|Fn(Z)\| |   im   |
+|   re   | \|F(Z)\| |   im   |
 
 [Source code](Examples/FivePoles_ClippedMesh2_Magn.pov)\
 ![Image - Mesh - Five poles - Magn](Examples/FivePoles_ClippedMesh2_Magn.png)
@@ -38,7 +38,7 @@ Im(Z) = im
 
 | x-axis |  y-axis   | z-axis |
 | ------ | --------- | ------ |
-|   re   | Re(Fn(Z)) |   im   |
+|   re   | Re(F(Z)) |   im   |
 
 [Source code](Examples/FivePoles_ClippedMesh2_Real.pov)\
 ![Image - Mesh - Five poles - Real](Examples/FivePoles_ClippedMesh2_Real.png)
@@ -48,7 +48,7 @@ Im(Z) = im
 
 | x-axis |  y-axis   | z-axis |
 | ------ | --------- | ------ |
-|   re   | Im(Fn(Z)) |   im   |
+|   re   | Im(F(Z)) |   im   |
 
 [Source code](Examples/FivePoles_ClippedMesh2_Imag.pov)\
 ![Image - Mesh - Five poles - Imag](Examples/FivePoles_ClippedMesh2_Imag.png)
@@ -58,7 +58,7 @@ Im(Z) = im
 
 | x-axis |  y-axis   | z-axis |
 | ------ | --------- | ------ |
-|   re   | \|Fn(Z)\| |   im   |
+|   re   | \|F(Z)\| |   im   |
 
 [Source code](Examples/Two_Zeros_Two_Poles.pov)\
 ![Image - Mesh - Two zeros & Two poles](Examples/Two_Zeros_Two_Poles.png)
@@ -68,7 +68,7 @@ Im(Z) = im
 
 | x-axis |     y-axis    | z-axis |
 | ------ | ------------- | ------ |
-|   re   | Ln(\|Fn(Z)\|) |   im   |
+|   re   | Ln(\|F(Z)\|) |   im   |
 
 [Source code](Examples/HueStripes_MagnHeight.pov)\
 ![Image - Mesh - Hue stripes & Magnitude height](Examples/HueStripes_MagnHeight.png)
@@ -118,7 +118,7 @@ Im(Z) = im
 
 | x-axis |  y-axis   | z-axis |
 | ------ | --------- | ------ |
-|   re   | \|Fn(Z)\| |   im   |
+|   re   | \|F(Z)\| |   im   |
 
 [Source code](Examples/HueStripes_MagnHeight_NonLn.pov)\
 ![Image - Mesh - Hue stripes & Magnitude height](Examples/HueStripes_MagnHeight_NonLn.png)
@@ -128,7 +128,7 @@ Im(Z) = im
 
 | x-axis |   y-axis   | z-axis |
 | ------ | ---------- | ------ |
-|   re   | Re(Fn(Z))  |   im   |
+|   re   | Re(F(Z))  |   im   |
 
 [Source code](Examples/HueStripes_RealHeight_NonLn.pov)\
 ![Image - Mesh - Hue stripes & Real height](Examples/HueStripes_RealHeight_NonLn.png)
@@ -138,7 +138,7 @@ Im(Z) = im
 
 | x-axis |   y-axis   | z-axis |
 | ------ | ---------- | ------ |
-|   re   | Im(Fn(Z))  |   im   |
+|   re   | Im(F(Z))  |   im   |
 
 [Source code](Examples/HueStripes_ImagHeight_NonLn.pov)\
 ![Image - Mesh - Hue stripes & Imag height](Examples/HueStripes_ImagHeight_NonLn.png)
