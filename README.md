@@ -36,9 +36,9 @@ Im(Z) = im
 ### Mesh with domain colors of a complex function
 ### F(Z) = 1/(Z<sup>5</sup> - 2)<sup>2</sup>
 
-| x-axis | y-axis | z-axis |
-| ------ | ------ | ------ |
-|   re   | Re(Z)  |   im   |
+| x-axis |  y-axis   | z-axis |
+| ------ | --------- | ------ |
+|   re   | Re(Fn(Z)) |   im   |
 
 [Source code](Examples/FivePoles_ClippedMesh2_Real.pov)\
 ![Image - Mesh - Five poles - Real](Examples/FivePoles_ClippedMesh2_Real.png)
@@ -46,9 +46,9 @@ Im(Z) = im
 ### Mesh with domain colors of a complex function
 ### F(Z) = 1/(Z<sup>5</sup> - 2)<sup>2</sup>
 
-| x-axis | y-axis | z-axis |
-| ------ | ------ | ------ |
-|   re   | Im(Z)  |   im   |
+| x-axis |  y-axis   | z-axis |
+| ------ | --------- | ------ |
+|   re   | Im(Fn(Z)) |   im   |
 
 [Source code](Examples/FivePoles_ClippedMesh2_Imag.pov)\
 ![Image - Mesh - Five poles - Imag](Examples/FivePoles_ClippedMesh2_Imag.png)
