@@ -42,11 +42,11 @@ Z = re + im\*j
 
   Atan(z) = (ln(1 - Z\*j) - ln(1 + Z\*j))/2\*j
 
-  Cosh(Z) = (e^(+Z) + e^(-Z)))/2
+  Cosh(Z) = (e^(+Z) + e^(-Z))/2
 
   Acosh(Z) = +ln(Z + sqrt(Z + 1)\*sqrt(Z - 1))
 
-  Sinh(Z) = (e^(+Z) - e^(-Z)))/2
+  Sinh(Z) = (e^(+Z) - e^(-Z))/2
 
   Asinh(Z) = +ln(Z + sqrt(Z^2 + 1))
 
