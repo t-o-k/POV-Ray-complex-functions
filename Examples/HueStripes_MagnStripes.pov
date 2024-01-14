@@ -3,7 +3,7 @@
 
 https://github.com/t-o-k/POV-Ray-complex-functions
 
-Copyright (c) 2022 Tor Olav Kristensen, http://subcube.com
+Copyright (c) 2022-2024 Tor Olav Kristensen, http://subcube.com
 
 Use of this source code is governed by the GNU Lesser General Public License version 3,
 hwhich can be found in the LICENSE file.
@@ -53,23 +53,23 @@ Prefix:
                 Add(
                     Neg(
                         Pow(
-                            Z(),
-                            Const(+3.0)
+                            Z,
+                            +3.0
                         ),
                     ),
                     Mul(
                         Sqr(
-                            Z()
+                            Z
                         ),
-                        Const(+1.0*j)
+                        +1.0*j
                     )
                 ),
-                Const(+1.0)
+                +1.0
             ),
             Sqr(
                 Add(
-                    Z(),
-                    Const(-1.0 +1.0*j)
+                    Z,
+                    -1.0 +1.0*j
                 )
             )
         )
@@ -83,23 +83,23 @@ Postfix:
                 (
                     (
                         (
-                            ()Z,
-                            (+3.0)Const
+                            Z,
+                            +3.0
                         )Pow
                     )Neg,
                     (
                         (
-                            ()Z
+                            Z
                         )Sqr,
-                        (+1.0*j)Const
+                        +1.0*j
                     )Mul
                 )Add,
-                (+1.0)Const
+                +1.0
             )Add,
             (
                 (
-                    ()Z,
-                    (-1.0 +1.0*j)Const
+                    Z,
+                    -1.0 +1.0*j
                 )Add
             )Sqr
         )Div
