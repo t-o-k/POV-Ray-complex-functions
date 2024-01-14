@@ -39,10 +39,10 @@ Prefix notation:
             Sqr(
                 Sub(
                     Pow(
-                        Z(),
-                        Const(5.0)
+                        Z,
+                        5.0
                     ),
-                    Const(2.0)
+                    2.0
                 )
             )
         )
@@ -55,10 +55,10 @@ Postfix notation:
             (
                 (
                     (
-                        ()Z,
-                        (5.0)Const
+                        Z,
+                        5.0
                     )Pow,
-                    (2.0)Const
+                    2.0
                 )Sub
             )Sqr
         )Inv
