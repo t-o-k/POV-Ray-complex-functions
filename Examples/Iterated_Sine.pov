@@ -38,7 +38,7 @@ The function below and the iteration idea was found here:
 
 Prefix/Infix notation:
 
-    Fn(Z) = (+1.0 +1.0*j)*sin(Z)
+    Fn(Z) = (1.0 + 1.0*j)*sin(Z)
 
 
 Prefix notation:
