@@ -38,15 +38,17 @@ The function below and the iteration idea was found here:
 
 Prefix/Infix notation:
 
-    Fn(Z) = (1 + j)*sin(Z)
+    Fn(Z) = (+1.0 +1.0*j)*sin(Z)
 
 
 Prefix notation:
 
     Fn(Z) =
         Mul(
-            1 + j,
-            Sin(Z)
+            +1.0 +1.0*j,
+            Sin(
+                Z
+            )
         )
 
 
@@ -54,8 +56,10 @@ Postfix notation:
 
     (Z)Fn =
         (
-            1 + j,
-            (Z)Sin
+            +1.0 +1.0*j,
+            (
+                Z
+            )Sin
         )Mul
 */
 
