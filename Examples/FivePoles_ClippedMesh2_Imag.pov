@@ -3,7 +3,7 @@
 
 https://github.com/t-o-k/POV-Ray-complex-functions
 
-Copyright (c) 2021-2022 Tor Olav Kristensen, http://subcube.com
+Copyright (c) 2021-2024 Tor Olav Kristensen, http://subcube.com
 
 Use of this source code is governed by the GNU Lesser General Public License version 3,
 which can be found in the LICENSE file.
