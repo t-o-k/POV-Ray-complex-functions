@@ -3,7 +3,7 @@
 
 https://github.com/t-o-k/POV-Ray-complex-functions
 
-Copyright (c) 2021-2022 Tor Olav Kristensen, http://subcube.com
+Copyright (c) 2021-2024 Tor Olav Kristensen, http://subcube.com
 
 Use of this source code is governed by the GNU Lesser General Public License version 3,
 which can be found in the LICENSE file.
@@ -23,7 +23,7 @@ global_settings { assumed_gamma 1.0 }
 /*
 Prefix/Infix notation:
 
-    Fn(Z) = (Z^2 + 1)/(Z^2 - 1)
+    Fn(Z) = (Z^2 + 1.0)/(Z^2 - 1.0)
 
 
 Prefix notation:
@@ -32,15 +32,15 @@ Prefix notation:
         Div(
             Add(
                 Sqr(
-                    Z()
+                    Z
                 ),
-                Const(1.0)
+                1.0
             ),
             Sub(
                 Sqr(
-                    Z()
+                    Z
                 ),
-                Const(1.0)
+                1.0
             )
         )
 
@@ -51,15 +51,15 @@ Postfix notation:
         (
             (
                 (
-                    ()Z
+                    Z
                 )Sqr,
-                (1.0)Const
+                1.0
             )Add,
             (
                 (
-                    ()Z
+                    Z
                 )Sqr,
-                (1.0)Const
+                1.0
             )Sub
         )Div
 */
