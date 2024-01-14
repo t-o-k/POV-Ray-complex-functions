@@ -42,7 +42,7 @@ The function below is from Kurtz le pirate in this POV-Ray newsgroup post:
 
 Prefix/Infix:
 
-    Fn(Z) = (-Z^3 + Z^2*j + 1)/(Z - 1 + j)^2
+    Fn(Z) = (-Z^3.0 + Z^2.0*j + 1.0)/(Z - 1.0 + 1.0*j)^2.0
 
 
 Prefix:
