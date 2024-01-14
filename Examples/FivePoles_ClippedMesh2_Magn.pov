@@ -30,7 +30,7 @@ The function below was found here:
 
 Prefix/Infix notation:
 
-    Fn(Z) = 1/(Z^5 - 2)^2
+    Fn(Z) = 1.0/(Z^5.0 - 2.0)^2.0
 
 
 Prefix notation:
