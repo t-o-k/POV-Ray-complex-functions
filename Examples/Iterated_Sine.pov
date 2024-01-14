@@ -31,7 +31,7 @@ default {
 
 // ===== 1 ======= 2 ======= 3 ======= 4 ======= 5 ======= 6 ======= 7 ======= 8 ======= 9 ======= 10
 /*
-The function below and the iteration idea was found here:
+The function below and the iteration idea was found on this web page by John E. Davis:
 
     https://www.jedsoft.org/fun/complex/gallery.html
 
